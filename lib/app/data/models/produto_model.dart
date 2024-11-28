@@ -17,4 +17,18 @@ class ProdutoModel {
     required this.thumbnail,
     required this.images
   });
+
+  factory  ProdutoModel.fromMap(Map<String, dynamic> map) {
+    return ProdutoModel( 
+      title: map['title'],
+      description: map['description'],
+      price:  map['price']  * 1.0,
+      ratinge:  map['ratinge'] * 1.0,
+      brand:  map['brand'],
+      category:  map['category'],
+      thumbnail:  map['thumbnail'],
+      images: List<String>.from((map['images'] as List)),
+    );
+  }
 }
+ 
