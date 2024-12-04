@@ -5,7 +5,7 @@ class ProdutoModel {
   final String ratinge;
   final String brand;
   final String category;
-  final String thumbnail;;
+  final String thumbnail;
   final String images;
 
   ProdutoModel({required this.title,
