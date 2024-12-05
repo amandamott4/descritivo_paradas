@@ -1,31 +1,29 @@
 //responsavel por gerenciar o estado dos produtos
 
 import 'package:descritivo_paradas/app/data/http/exceptions.dart';
+import 'package:descritivo_paradas/app/data/models/produto_model.dart';
 import 'package:descritivo_paradas/app/data/repositories/produto_repository.dart';
 import 'package:flutter/material.dart';
 
 class ProdutoStore {
-final IProdutoReposity repository;
+  final IProdutoReposity repository;
 
-
-    //o estado inicial da variável é false, então não vai exibir nenhum carregamento na tela
+  // Variável reativa para o loading
   final ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
 
-    //variavel que vai guardar o estado
+  // Variável reativa para o state
   final ValueNotifier<List<ProdutoModel>> state =
       ValueNotifier<List<ProdutoModel>>([]);
 
-  //
+  // Variável reativa para o erro
   final ValueNotifier<String> erro = ValueNotifier<String>('');
 
   ProdutoStore({required this.repository});
 
+  Future getProdutos() async {
+    isLoading.value = true;
 
-  getProdutos() async {
-    isloading.value = true
-
-    try{
-      //tenta fazer a requisição e atualiza o state(lista de produtos)
+    try {
       final result = await repository.getProdutos();
       state.value = result;
     } on NotFoundException catch (e) {
@@ -33,6 +31,7 @@ final IProdutoReposity repository;
     } catch (e) {
       erro.value = e.toString();
     }
+
+    isLoading.value = false;
   }
-      isloading.value = false;
 }
