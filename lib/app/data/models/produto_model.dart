@@ -1,34 +1,19 @@
 class ProdutoModel {
-  final String title;
-  final String description;
-  final double price;
-  final double rating;
-  final String brand;
-  final String category;
-  final String thumbnail;
-  final List<String> images;
+ 
+  final String sentido;
+  final List<String> itinerario;
 
   ProdutoModel({
-    required this.title,
-    required this.description,
-    required this.price,
-    required this.rating,
-    required this.brand,
-    required this.category,
-    required this.thumbnail,
-    required this.images,
+   
+    required this.sentido,
+    required this.itinerario,
   });
 
   factory ProdutoModel.fromMap(Map<String, dynamic> map) {
     return ProdutoModel(
-      title: map['title'],
-      description: map['description'],
-      price: map['price'] * 1.0,
-      rating: map['rating'] * 1.0,
-      brand: map['brand'],
-      category: map['category'],
-      thumbnail: map['thumbnail'],
-      images: List<String>.from((map['images'] as List)),
+    
+      sentido: map['sentido'],
+      itinerario: List<String>.from(map['sentido']),
     );
   }
 }

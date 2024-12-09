@@ -15,7 +15,7 @@ class ProdutoRepository implements IProdutoReposity {
   @override
   Future<List<ProdutoModel>> getProdutos() async {
     final response = await client.get(
-      url: 'https://dummyjson.com/products',
+      url: 'http://10.233.144.111:3000/itinerario/descritivo/:codigolinha',
     );
 
     if (response.statusCode == 200) {

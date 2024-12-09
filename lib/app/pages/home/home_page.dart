@@ -87,14 +87,14 @@ class _HomePageState extends State<HomePage> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: Image.network(
-                        item.thumbnail,
+                        item.sentido,
                         fit: BoxFit.cover,
                       ),
                     ),
                     ListTile(
                       contentPadding: EdgeInsets.zero,
                       title: Text(
-                        item.title,
+                        item.origem,
                         style: const TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w600,
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'R\$ ${item.price}',
+                            'R\$ ${item.sentido}',
                             style: const TextStyle(
                               color: Colors.green,
                               fontWeight: FontWeight.w600,
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            item.description,
+                            item.destino,
                             style: const TextStyle(
                               color: Colors.black54,
                               fontWeight: FontWeight.w400,
