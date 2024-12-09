@@ -1,5 +1,5 @@
 import 'package:descritivo_paradas/app/data/http/http_client.dart';
-import 'package:descritivo_paradas/app/data/repositories/produto_repository.dart';
+import 'package:descritivo_paradas/app/data/repositories/itinerario_repository.dart';
 import 'package:descritivo_paradas/app/pages/home/stores/produto_store.dart';
 import 'package:flutter/material.dart';
 

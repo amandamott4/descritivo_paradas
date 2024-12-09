@@ -1,8 +1,8 @@
 //responsavel por gerenciar o estado dos produtos
 
 import 'package:descritivo_paradas/app/data/http/exceptions.dart';
-import 'package:descritivo_paradas/app/data/models/produto_model.dart';
-import 'package:descritivo_paradas/app/data/repositories/produto_repository.dart';
+import 'package:descritivo_paradas/app/data/models/endpoint_model.dart';
+import 'package:descritivo_paradas/app/data/repositories/itinerario_repository.dart';
 import 'package:flutter/material.dart';
 
 class ProdutoStore {
